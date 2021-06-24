@@ -157,3 +157,16 @@ Resources:
           AttributeType: S
         - AttributeName: sk
           AttributeType: S
+  TableNameParameter:
+    Type: AWS::SSM::Parameter
+    Properties:
+      Name: "/movies-app/table/name"
+      Type: String
+      Value: !Ref MoviesTable
+
+  TableArnParameter:
+    Type: AWS::SSM::Parameter
+    Properties:
+      Name: "/movies-app/table/arn"
+      Type: String
+      Value: !GetAtt MoviesTable.Arn
